@@ -1,0 +1,28 @@
+@font-face {
+  font-family: $font-butler;
+  src: url('../fonts/Butler.woff2') format('woff2'),
+      url('../fonts/Butler.woff') format('woff'),
+      url('../fonts/Butler_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-sf;
+  src: url('../fonts/SFPRODISPLAYREGULAR.woff2') format('woff2'),
+      url('../fonts/SFPRODISPLAYREGULAR.woff') format('woff'),
+      url('../fonts/SFPRODISPLAYREGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-n27;
+  src: url('../fonts/n27regular.eot');
+  src: url('../fonts/n27regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/n27regular.woff2') format('woff2'),
+       url('../fonts/n27regular.woff') format('woff'),
+       url('../fonts/n27regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

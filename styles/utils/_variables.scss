@@ -1,0 +1,23 @@
+$color-sugar-white: #fffcf2;
+$color-eggshell: #ccc5b9;
+$color-dessert: #403d39;
+$color-black-oak: #252422;
+$color-sunset: #eb5e28;
+
+$ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+$font-butler: 'Butler';
+$font-sf: 'SF Pro Display';
+$font-n27: 'n27regular';
+
+$z-indexes: (
+  'preloader',
+  'navigation',
+  'modal',
+  'link',
+  'content',
+  'selected',
+  'canvas',
+  'title'
+);

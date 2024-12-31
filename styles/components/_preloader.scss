@@ -1,0 +1,51 @@
+.preloader
+{
+  @extend %cover;
+
+  z-index: z('preloader');
+
+  background: $color-sugar-white;
+
+  &__logo
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 12rem;
+
+    overflow: hidden;
+
+  }
+
+  &__border
+  {
+    position: absolute;
+    top: 9.9rem;
+    left: 0;
+
+    background: $color-eggshell;
+    height: 1px;
+    width: 100%;
+  }
+
+  &__number
+  {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: z('content');
+
+    overflow: hidden;
+
+    &__text
+    {
+      @extend %desc-18;
+    }
+  }
+}

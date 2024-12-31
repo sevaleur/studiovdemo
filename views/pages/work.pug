@@ -1,0 +1,52 @@
+extends ../base.pug
+
+block variables
+  - var template = 'work'
+
+block content
+  section.work
+    .work__menu
+      .work__menu__wrapper
+        each el in work.projects
+          .work__menu__element(data-article=el.title)
+            .work__menu__element__media
+              figure.work__menu__element__media__figure
+                img.work__menu__element__media__figure__image(data-src=Build.image(el.image.asset._ref).url() alt=el.image.alt)
+            .work__menu__element__title
+              h2.work__menu__element__title__text=el.type
+            .work__menu__element__area
+              p.work__menu__element__area__text=el.area
+            .work__menu__element__border
+            .work__menu__element__left.border__active
+            .work__menu__element__right.border__active
+
+    article.work__selected
+      each el in work.projects
+        .work__selected__element(data-selected=false)
+          .work__selected__element__lh
+
+            .work__selected__element__lh__text
+              .work__selected__element__lh__text__title
+                h2.work__selected__element__lh__text__title__text=el.title
+
+              .work__selected__element__lh__text__details
+                .work__selected__element__lh__text__details__detail.location
+                  p.work__selected__element__lh__text__details__detail__text=el.location
+                .work__selected__element__lh__text__details__detail.area
+                  p.work__selected__element__lh__text__details__detail__text=el.area
+                if el.completion
+                  .work__selected__element__lh__text__details__detail.completion(data-article=el.title)
+                    p.work__selected__element__lh__text__details__detail__text=`Completed: ${el.completion}`
+
+            .work__selected__element__lh__media
+
+          .work__selected__element__rh
+            .work__selected__element__rh__media
+              figure.work__selected__element__rh__media__figure
+                img.work__selected__element__rh__media__figure__image(data-src=Build.image(el.smImage.asset._ref).url() alt=el.smImage.alt data-displacement="/images/displacement.jpeg")
+
+            .work__selected__element__rh__description
+              p.work__selected__element__rh__description__text!=el.description.replace(/\n/g, '<br>')
+
+      .work__selected__back(data-active=false data-index=0)
+        p.work__selected__back__text back

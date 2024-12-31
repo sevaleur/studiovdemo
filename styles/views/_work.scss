@@ -1,0 +1,318 @@
+.work
+{
+  @extend %page;
+  @extend %cover;
+
+  overflow: hidden;
+
+
+  &__menu
+  {
+    @extend %cover;
+
+    z-index: z('content');
+
+    &__wrapper
+    {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -8rem * 0.5);
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 5rem;
+    }
+
+    &__element
+    {
+      position: relative;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      padding: 4rem;
+
+      cursor: pointer;
+
+      transform-origin: center;
+
+      &__border
+      {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        height: 2px;
+        width: 100%;
+
+        transform-origin: right;
+
+        background: $color-eggshell;
+
+        transform: scaleX(0);
+      }
+
+      &__left
+      {
+        left: 0;
+
+        transform-origin: left;
+      }
+
+      &__right
+      {
+        right: 0;
+
+        transform-origin: right;
+      }
+
+      &__media
+      {
+        height: 6.7rem;
+        width: 12rem;
+
+        &__figure
+        {
+          height: 100%;
+          width: 100%;
+
+          visibility: hidden;
+
+          &__image
+          {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &__title
+      {
+        @extend %desc-100;
+        text-transform: uppercase;
+
+        line-height: 8rem;
+
+        text-align: left;
+
+        overflow: hidden;
+      }
+
+      &__area
+      {
+        @extend %desc-20;
+
+        align-self: flex-start;
+
+        white-space: nowrap;
+
+        border:1px solid $color-black-oak;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+
+  &__selected
+  {
+    z-index: z('selected');
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 4rem;
+    padding-bottom: 10rem;
+
+    display: grid;
+
+    opacity: 0.0;
+
+    &__element
+    {
+      grid-area: 1 / 1 / -1 / -1;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 5rem;
+
+      &__lh
+      {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+
+        width: 92rem;
+
+        &__text
+        {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+
+          &__title
+          {
+            overflow: hidden;
+
+            &__text
+            {
+              @extend %title-70;
+              text-transform: uppercase;
+              line-height: 7rem;
+              white-space: nowrap;
+            }
+          }
+
+          &__details
+          {
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+
+            overflow: hidden;
+
+            &__detail
+            {
+              @extend %desc-20;
+
+              border:1px solid $color-black-oak;
+              border-radius: 5px;
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+
+        &__media
+        {
+          width: 92rem;
+          height: 52rem;
+
+          &__figure
+          {
+            height: 100%;
+            width: 100%;
+
+            visibility: hidden;
+
+            &__image
+            {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      &__rh
+      {
+        height: 100%;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4rem;
+
+        &__media
+        {
+          width: 46rem;
+          height: 30rem;
+
+          &__figure
+          {
+            height: 100%;
+            width: 100%;
+
+            visibility: hidden;
+
+            &__image
+            {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        &__description
+        {
+          @extend %desc-18;
+
+          margin-top: 2rem;
+          letter-spacing: 0.05rem;
+
+          &__text
+          {
+            overflow: hidden;
+
+            span
+            {
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+
+    &__back
+    {
+      position: absolute;
+      bottom: 4rem;
+      left: 50%;
+
+      transform: translateX(-50%) scale(0);
+
+      width: 10rem;
+      height: 4rem;
+
+      border: 1px solid $color-black-oak;
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      display: grid;
+      place-content: center;
+
+      background: $color-black-oak;
+      color: $color-sugar-white;
+
+      &__text
+      {
+        font-family: $font-n27;
+        font-size: 2rem;
+
+        text-transform: uppercase;
+
+        width: fit-content;
+      }
+    }
+  }
+}
+
+.border__active
+{
+  position: absolute;
+  bottom: 0;
+
+  height: 2px;
+  width: 50%;
+
+  background: $color-black-oak;
+
+  transform: scaleX(0);
+}
