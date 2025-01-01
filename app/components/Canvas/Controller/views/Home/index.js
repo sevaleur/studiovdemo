@@ -1,4 +1,5 @@
 import { Group, TextureLoader } from 'three'
+import gsap from 'gsap'
 
 import Element from './Element'
 import SElement from './SElement'
@@ -21,6 +22,8 @@ export default class Home
     this.onResize({ screen, viewport })
 
     this.scene.add(this.group)
+
+    this.selectedMedia = false
 
     this.show()
   }
@@ -91,11 +94,28 @@ export default class Home
 
   hide()
   {
-    this.elements.forEach(
-      ( element, index ) =>
+    return new Promise(
+      resolve =>
       {
-        element.hide()
-        this.sElems[index].onBack()
+        if(this.selectedMedia)
+        {
+          this.elements.forEach(
+            (el, idx) =>
+            {
+              el.hide()
+              if(this.sElems[idx].selected) this.sElems[idx].onBack()
+            }
+          )
+
+          gsap.delayedCall(0.8, () => { resolve() })
+        }
+        else
+        {
+          this.hideAnimation()
+
+          gsap.delayedCall(0.8, () => { resolve() })
+
+        }
       }
     )
   }
@@ -127,6 +147,8 @@ export default class Home
 
   onSelect(idx)
   {
+    this.selectedMedia = true
+
     this.backBtn.dataset.index = idx
 
     let length = this.elements.length - 1
@@ -162,9 +184,11 @@ export default class Home
         element.onBack(idx, length)
       }
     )
+
+    this.selectedMedia = false
   }
 
-  hide()
+  hideAnimation()
   {
     let half = Math.floor(this.elements.length / 2)
     let length = this.elements.length - 1

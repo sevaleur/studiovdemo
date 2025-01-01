@@ -14,14 +14,24 @@
   background: #fffcf267;
   backdrop-filter: blur(10px);
 
+  @include media('<=phone')
+  {
+    height: 12.5rem;
+  }
+
   &__contact
   {
-    @extend %desc-16;
+    @extend %desc-12;
 
     position: absolute;
     top: 3rem;
 
     letter-spacing: 0.2rem;
+
+    @include media('<=phone')
+    {
+      display: none;
+    }
 
     &__city
     {
@@ -64,6 +74,11 @@
 
     transition: all 0.2s ease-in-out;
 
+    @include media('<=phone')
+    {
+      width: 20rem;
+    }
+
     &:hover
     {
       opacity: 0.8;
@@ -82,6 +97,11 @@
     transition: all 0.2s ease-in-out;
 
     overflow: hidden;
+
+    @include media('<=phone')
+    {
+      font-size: 3rem;
+    }
 
     &:hover
     {

@@ -81,14 +81,24 @@ export default class SElement
 
       }
     )
+
+    this.onAlphaChange = gsap.fromTo(
+      this.material.uniforms.uAlpha,
+      {
+        value: 0.0,
+      },
+      {
+        value: 1.0,
+        ease: 'power2.inOut',
+        paused: true
+      }
+    )
   }
 
   onSelect()
   {
-    this.material.uniforms.uAlpha.value = 1.0
-
-    gsap.delayedCall(
-      0.46, () =>
+    this.onAlphaChange.play()
+      .eventCallback('onComplete', () =>
       {
         this.onStateChange.play()
       }
@@ -98,6 +108,16 @@ export default class SElement
   onBack()
   {
     this.onStateChange.reverse()
+      .eventCallback('onReverseComplete', () =>
+      {
+        this.onAlphaChange.reverse()
+      }
+    )
+  }
+
+  onHide()
+  {
+    this.onAlphaChange.reverse()
   }
 
   onResize(sizes)

@@ -17,7 +17,7 @@ html
   background: $color-sugar-white;
   color: $color-black-oak;
 
-  @include media('<phone')
+  @include media('<=phone')
   {
     font-size: calc(100vw / 750px * 10px);
   }

@@ -5,11 +5,15 @@ block variables
 
 block content
   section.info
-    .info__title
-      h1.info__title__text=info.title
+    .info__wrapper
+      .info__media
+        figure.info__media__figure
+          img.info__media__figure__image(src=Build.image(info.image.asset._ref).url() alt=info.image.alt)
 
-    .info__subtitle
-      h2.info__subtitle__text!=info.subtitle.replace(/\n/g, '<br>')
-
-    .info__desc
-      p.info__desc__text!=info.desc.replace(/\n/g, '<br>')
+      .info__text
+        .info__text__title
+          h1.info__text__title__text=info.title
+        .info__text__subtitle
+          h2.info__text__subtitle__text!=info.subtitle.replace(/\n/g, '<br>')
+        .info__text__desc
+          p.info__text__desc__text!=info.desc.replace(/\n/g, '<br>')

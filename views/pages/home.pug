@@ -20,15 +20,15 @@ block content
       each el in home.showcase
         .home__selected__element
           .home__selected__image
+          .home__selected__title
+            h2.home__selected__title__text!=el.title.replace(/\n/g, '<br>')
           .home__selected__smImage
             figure.home__selected__smImage__figure
               img.home__selected__smImage__figure__image(data-src=Build.image(el.smImage.asset._ref).url() alt=el.smImage.alt)
-          .home__selected__title
-            h2.home__selected__title__text!=el.title.replace(/\n/g, '<br>')
-          .home__selected__article
-            p.home__selected__article__text!=el.description.replace(/\n/g, '<br>')
           .home__selected__name
             p.home__selected__name__text=el.name
+          .home__selected__article
+            p.home__selected__article__text!=el.description.replace(/\n/g, '<br>')
           .home__selected__link.outside__link
             if el.linkText
               p.home__selected__link__text!=el.linkText.replace(/\n/g, '<br>')

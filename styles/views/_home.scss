@@ -15,6 +15,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include media('<=phone')
+    {
+      font-size: 7rem;
+    }
   }
 
   &__showcase
@@ -29,6 +34,12 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @include media('<=phone')
+    {
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
 
     &__element
     {
@@ -76,6 +87,11 @@
 
     display: grid;
 
+    @include media('<=phone')
+    {
+      top: 10rem;
+    }
+
     &__element
     {
       grid-area: 1 / 1 / -1 / -1;
@@ -89,6 +105,12 @@
       gap: 2.5rem;
 
       opacity: 0.0;
+
+      @include media('<=phone')
+      {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &__smImage
@@ -102,6 +124,11 @@
       width: 40rem;
 
       margin-bottom: 7rem;
+
+      @include media('<=phone')
+      {
+        align-self: center;
+      }
 
       &__figure
       {
@@ -129,6 +156,12 @@
       width: 100%;
 
       margin-bottom: 7rem;
+
+      @include media('<=phone')
+      {
+        //margin-bottom: 0rem;
+        height: 45rem;
+      }
     }
 
     &__title
@@ -143,6 +176,11 @@
 
       text-align: center;
       white-space: nowrap;
+
+      @include media('<=phone')
+      {
+        font-size: 6rem;
+      }
     }
 
     &__article
@@ -157,6 +195,11 @@
       line-height: 2.5rem;
       letter-spacing: 0.05rem;
 
+      @include media('<=phone')
+      {
+        align-self: center;
+        font-size: 2.5rem;
+      }
     }
 
     &__name
@@ -171,6 +214,11 @@
 
       display: flex;
       gap: 2rem;
+
+      @include media('<=phone')
+      {
+        font-size: 5rem;
+      }
 
       &__text
       {

@@ -29,6 +29,11 @@
     background: $color-eggshell;
     height: 1px;
     width: 100%;
+
+    @include media('<=phone')
+    {
+      top: 12.4rem;
+    }
   }
 
   &__number
@@ -46,6 +51,11 @@
     &__text
     {
       @extend %desc-18;
+
+      @include media('<=phone')
+      {
+        font-size: 3rem;
+      }
     }
   }
 }

@@ -232,7 +232,7 @@ export default class Page
         this.animateOut.to(this.element,
         {
           autoAlpha: 0,
-          onComplete: resolve
+          onComplete: resolve()
         })
       })
     }
@@ -246,6 +246,8 @@ export default class Page
             el.onLeave()
           }
         )
+
+        resolve()
       }
 
       this.removeEventListeners()

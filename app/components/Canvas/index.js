@@ -69,20 +69,20 @@ export default class Canvas
   {
     this.isDown = true
 
-    this.touch.x.start = e.touches ? e.touches[0].clientX : e.clientX
+    /* this.touch.x.start = e.touches ? e.touches[0].clientX : e.clientX
     this.touch.y.start = e.touches ? e.touches[0].clientY : e.clientY
 
     this.controller.onTouchDown({
       y: this.touch.y,
       x: this.touch.x
-    })
+    }) */
   }
 
   onTouchMove()
   {
     if(!this.isDown) return
 
-    const x = e.touches ? e.touches[0].clientX : e.clientX
+   /*  const x = e.touches ? e.touches[0].clientX : e.clientX
     const y = e.touches ? e.touches[0].clientY : e.clientY
 
     this.touch.y.end = y
@@ -91,17 +91,17 @@ export default class Canvas
     this.controller.onTouchMove({
       y: this.touch.y,
       x: this.touch.x
-    })
+    }) */
   }
 
   onTouchUp()
   {
     this.isDown = false
 
-    this.controller.onTouchUp({
+    /* this.controller.onTouchUp({
       y: this.touch.y,
       x: this.touch.x
-    })
+    }) */
   }
 
   onWheel(e)
@@ -114,12 +114,12 @@ export default class Canvas
     this.controller.onChange(this.template)
   }
 
-  onChangeStart(template, url, push)
+  async onChangeStart(template, url, push)
   {
     if(!push)
         return
 
-    this.controller.onChangeStart(template, url, push)
+    await this.controller.onChangeStart(template, url, push)
   }
 
   onChange(template)

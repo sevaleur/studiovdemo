@@ -92,13 +92,13 @@ export default class Controller
 *
 */
 
-  onChangeStart(template, url, push)
+  async onChangeStart(template, url, push)
   {
     if(!push)
       return
 
     if(this.home)
-      this.home.hide()
+      await this.home.hide()
 
     if(this.work)
       this.work.hide()

@@ -95,7 +95,7 @@ export default class App
 
   async onChange({ url, push = true })
   {
-    this.canvas.onChangeStart(this.template, url, push)
+    await this.canvas.onChangeStart(this.template, url, push)
 
     await this.page.hide()
     const req = await window.fetch(url)

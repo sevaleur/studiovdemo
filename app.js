@@ -121,6 +121,19 @@ const preloadAssets = async() =>
         this.assets.push(smImage)
     }
   )
+
+  const info = await url(
+    encodeURIComponent(
+      `*[_type == "info"]{
+        image
+      }`
+    )
+  )
+
+  let infoMedia = build.image(info.result[0].image.asset._ref).url()
+
+  if(!this.assets.includes(infoMedia))
+    this.assets.push(infoMedia)
 }
 
 const handleReq = async(req) =>
