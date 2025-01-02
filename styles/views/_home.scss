@@ -19,6 +19,8 @@
     @include media('<=phone')
     {
       font-size: 7rem;
+
+      top: 25%;
     }
   }
 
@@ -47,6 +49,12 @@
       width: 26rem;
 
       cursor: pointer;
+
+      @include media('<=phone')
+      {
+        width: 30rem;
+        height: 20rem;
+      }
 
       &__media
       {
@@ -89,7 +97,7 @@
 
     @include media('<=phone')
     {
-      top: 10rem;
+      padding-top: 15rem;
     }
 
     &__element
@@ -110,6 +118,8 @@
       {
         display: flex;
         flex-direction: column;
+
+        height: 100dvh;
       }
     }
 
@@ -128,6 +138,7 @@
       @include media('<=phone')
       {
         align-self: center;
+        margin-bottom: 0;
       }
 
       &__figure
@@ -159,7 +170,7 @@
 
       @include media('<=phone')
       {
-        //margin-bottom: 0rem;
+        margin-bottom: 0rem;
         height: 45rem;
       }
     }
@@ -179,7 +190,7 @@
 
       @include media('<=phone')
       {
-        font-size: 6rem;
+        font-size: 5rem;
       }
     }
 
@@ -217,7 +228,7 @@
 
       @include media('<=phone')
       {
-        font-size: 5rem;
+        font-size: 2.5rem;
       }
 
       &__text
@@ -233,6 +244,11 @@
       justify-self: center;
 
       margin-top: 2rem;
+
+      @include media('<=phone')
+      {
+        display: none;
+      }
     }
 
     &__back
@@ -257,6 +273,13 @@
       background: $color-black-oak;
       color: $color-sugar-white;
 
+      @include media('<=phone')
+      {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1.5rem;
+      }
+
       &__text
       {
         font-family: $font-n27;
@@ -265,6 +288,11 @@
         text-transform: uppercase;
 
         width: fit-content;
+
+        @include media('<=phone')
+        {
+          font-size: 5rem;
+        }
       }
     }
   }

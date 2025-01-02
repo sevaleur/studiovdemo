@@ -41,6 +41,11 @@
 
       transform-origin: center;
 
+      @include media('<=phone')
+      {
+        width: 100dvw;
+      }
+
       &__border
       {
         position: absolute;
@@ -102,6 +107,11 @@
         text-align: left;
 
         overflow: hidden;
+
+        @include media('<=phone')
+        {
+          font-size: 5rem;
+        }
       }
 
       &__area
@@ -137,6 +147,11 @@
 
     opacity: 0.0;
 
+    @include media('<=phone')
+    {
+      padding-top: 15rem;
+    }
+
     &__element
     {
       grid-area: 1 / 1 / -1 / -1;
@@ -146,6 +161,14 @@
       justify-content: center;
       gap: 5rem;
 
+      @include media('<=phone')
+      {
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+        width:100%;
+      }
+
       &__lh
       {
         display: flex;
@@ -154,6 +177,12 @@
         gap: 2rem;
 
         width: 92rem;
+
+        @include media('<=phone')
+        {
+          width: 60rem;
+          padding: 2rem;
+        }
 
         &__text
         {
@@ -172,6 +201,12 @@
               text-transform: uppercase;
               line-height: 7rem;
               white-space: nowrap;
+
+              @include media('<=phone')
+              {
+                font-size: 5rem;
+                white-space:initial;
+              }
             }
           }
 
@@ -201,6 +236,13 @@
           width: 92rem;
           height: 52rem;
 
+          @include media('<=phone')
+          {
+            width: 100%;
+            padding: 0.5rem;
+            height: 40rem;
+          }
+
           &__figure
           {
             height: 100%;
@@ -227,6 +269,13 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 4rem;
+
+        @include media('<=phone')
+        {
+          gap: 4rem;
+          align-items: center;
+          flex-direction: column-reverse;
+        }
 
         &__media
         {
@@ -255,6 +304,11 @@
 
           margin-top: 2rem;
           letter-spacing: 0.05rem;
+
+          @include media('<=phone')
+          {
+            font-size: 2.5rem;
+          }
 
           &__text
           {
@@ -291,6 +345,14 @@
       background: $color-black-oak;
       color: $color-sugar-white;
 
+      @include media('<=phone')
+      {
+        width: fit-content;
+        height: fit-content;
+
+        padding: 0.5rem 1.5rem;
+      }
+
       &__text
       {
         font-family: $font-n27;
@@ -299,6 +361,11 @@
         text-transform: uppercase;
 
         width: fit-content;
+
+        @include media('<=phone')
+        {
+          font-size: 5rem;
+        }
       }
     }
   }

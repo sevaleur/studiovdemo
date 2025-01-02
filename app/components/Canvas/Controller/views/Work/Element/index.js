@@ -43,6 +43,8 @@ export default class Element
       uniforms: {
         tMap:   { value: null },
         uAlpha: { value: 0.0 },
+        uPlaneSize: { value: { x: 0, y: 0 } },
+        uImageSize: { value: { x: 0, y: 0 } },
       },
       vertexShader: vertex,
       fragmentShader: fragment,
@@ -56,6 +58,9 @@ export default class Element
 
     this.texture = window.IMAGE_TEXTURES[src]
     this.material.uniforms.tMap.value = this.texture
+
+    this.material.uniforms.uImageSize.value.x = this.texture.source.data.naturalWidth
+    this.material.uniforms.uImageSize.value.y = this.texture.source.data.naturalHeight
   }
 
   createMesh()
@@ -120,6 +125,9 @@ export default class Element
     this.updateScale()
     this.updateX()
     this.updateY()
+
+    this.material.uniforms.uPlaneSize.value.x = this.plane.scale.x
+    this.material.uniforms.uPlaneSize.value.y = this.plane.scale.y
   }
 
   show()
@@ -285,6 +293,9 @@ export default class Element
 
     this.selectedScale.x = this.viewport.width * this.selectedBounds.width / this.screen.width
     this.selectedScale.y = this.viewport.height * this.selectedBounds.height / this.screen.height
+
+    this.plane.material.uniforms.uPlaneSize.value.x = this.plane.scale.x
+    this.plane.material.uniforms.uPlaneSize.value.y = this.plane.scale.y
   }
 
   updateX()

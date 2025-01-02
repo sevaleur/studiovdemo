@@ -122,27 +122,33 @@ export default class Home
 
   onMouseOver(idx)
   {
-    this.elements.forEach(
-      (element, index) =>
-      {
-        if(element.initialAnimFinished)
+    if(this.screen.device === "desktop")
+    {
+      this.elements.forEach(
+        (element, index) =>
         {
-          if(idx === index)
-            element.onMouseOver()
+          if(element.initialAnimFinished)
+          {
+            if(idx === index)
+              element.onMouseOver()
+          }
         }
-      }
-    )
+      )
+    }
   }
 
   onMouseLeave(idx)
   {
-    this.elements.forEach(
-      (element, index) =>
-      {
-        if(idx === index)
-          element.onMouseLeave()
-      }
-    )
+    if(this.screen.device === "desktop")
+    {
+      this.elements.forEach(
+        (element, index) =>
+        {
+          if(idx === index)
+            element.onMouseLeave()
+        }
+      )
+    }
   }
 
   onSelect(idx)
