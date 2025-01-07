@@ -149,7 +149,9 @@ export default class Element
         paused: true,
         onComplete: () => {
           this.offscreenPos.x = this.initialPos.x
-          this.offscreenPos.y = this.initialPos.y - 1.5
+          this.screen.device === "desktop"
+            ? this.offscreenPos.y = this.initialPos.y - 1.5
+            : this.offscreenPos.y = this.initialPos.y - 2.0
 
           gsap.to(
             this.plane.position,

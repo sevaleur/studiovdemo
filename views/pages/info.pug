@@ -17,3 +17,16 @@ block content
           h2.info__text__subtitle__text!=info.subtitle.replace(/\n/g, '<br>')
         .info__text__desc
           p.info__text__desc__text!=info.desc.replace(/\n/g, '<br>')
+
+      if device === 'phone'
+        .info__contact
+          .info__contact__street
+            p.info__contact__street__text=navigation.contact.street
+          .info__contact__city
+            p.info__contact__city__text=navigation.contact.city
+          .info__contact__phone
+            p.info__contact__phone__text=navigation.contact.phone
+          .info__contact__email.outside__link
+            a.info__contact__email__link.hidden(href=`mailto:${ navigation.contact.email }`)
+              p.info__contact__email__text=navigation.contact.email
+            .info__contact__email__active

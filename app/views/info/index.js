@@ -11,6 +11,7 @@ export default class Info extends Page
     super({
       element: '.info',
       elements: {
+        wrapper: '.info__wrapper',
         title: '.info__text__title',
         subtitle: '.info__text__subtitle__text',
         desc: '.info__text__desc__text',

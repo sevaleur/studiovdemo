@@ -181,7 +181,7 @@
         @include media('<=phone')
         {
           width: 60rem;
-          padding: 2rem;
+          padding: 2rem 0;
         }
 
         &__text
@@ -239,7 +239,6 @@
           @include media('<=phone')
           {
             width: 100%;
-            padding: 0.5rem;
             height: 40rem;
           }
 
@@ -281,6 +280,11 @@
         {
           width: 46rem;
           height: 30rem;
+
+          @include media('<=phone')
+          {
+            display: none;
+          }
 
           &__figure
           {

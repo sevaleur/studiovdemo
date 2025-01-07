@@ -11,11 +11,14 @@ const app = express()
 this.assets = []
 
 const path = require('path')
+const device = require('express-device')
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 
 app.set('view engine', 'pug')
+
+app.use(device.capture())
 
 const endpoint = process.env.ENDPOINT
 const projectId = process.env.PROJECT_ID
@@ -159,7 +162,8 @@ const handleReq = async(req) =>
   return {
     meta: meta.result[0],
     navigation: navigation.result[0],
-    assets: this.assets
+    assets: this.assets,
+    device: req.device.type
   }
 }
 

@@ -137,8 +137,7 @@
 
       @include media('<=phone')
       {
-        align-self: center;
-        margin-bottom: 0;
+        display: none;
       }
 
       &__figure
@@ -173,6 +172,7 @@
         margin-bottom: 0rem;
         height: 45rem;
       }
+
     }
 
     &__title
